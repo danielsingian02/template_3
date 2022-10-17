@@ -207,6 +207,10 @@ header {
 #description {
     margin: 4rem 0 2rem 0;
 
+    & .description {
+        width: 100%;
+    }
+
     & h2 {
         font-weight: 700;
         color: #292929;
@@ -237,6 +241,10 @@ header {
             contain, 
             center
         );
+
+        @media #{ $media_mobile } {
+            padding: 2rem 0;
+        }
     
     }
     

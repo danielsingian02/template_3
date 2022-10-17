@@ -154,6 +154,9 @@ header a {
 #description {
   margin: 4rem 0 2rem 0;
 }
+#description .description {
+  width: 100%;
+}
 #description h2 {
   font-weight: 700;
   color: #292929;
@@ -182,6 +185,11 @@ header a {
   background-repeat: no-repeat;
   background-size: contain;
   background-position-x: center;
+}
+@media only screen and (max-width: 767px) {
+  #description .description_column {
+    padding: 2rem 0;
+  }
 }
 @media only screen and (max-width: 767px) {
   #description {
