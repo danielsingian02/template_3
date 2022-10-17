@@ -95,7 +95,7 @@ header {
 }
 
 .navbar-container {
-    width: 1%;
+    width: 100%;
     padding: 0 4rem;
     display: flex;
     flex-direction: row;
@@ -123,6 +123,10 @@ header {
 
     @media #{ $media_tablet } {
         padding: 0 2rem;
+    }
+
+    @media #{ $media_mobile } {
+        padding: 1rem 0 1rem 1rem;
     }
 }
 
