@@ -1,0 +1,413 @@
+/* Theme Name: Template 3
+    Text Domain: Template 3
+    Version: 1.3
+    Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-patterns, block-styles, wide-blocks, accessibility-ready
+    Author: iPhiTech IT Digital Solutions Corporation
+    Author URI: iPhiTech IT Digital Solutions Corporation
+*/
+
+@use 'sass:math';
+
+// Imports the Montserrat font from Google Fonts
+/* header*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@function pxToRem( $px ) {
+    @return math.div( $px, 16px ) * 1rem;
+}
+
+@mixin setBackgroundImage( $url, $size: contain, $position-x: center ) {
+    background: {
+        image: $url;
+        repeat: no-repeat;
+        size: $size;
+        position-x: $position-x;
+    }
+}
+
+@mixin reusableH2(){
+    font-weight: 700;
+    font-size: pxToRem( 48px );
+    color: inherit;
+}
+
+// Color Pallete
+$primary-color: #C21919;
+
+// Media Queries
+$media_desktop_2: "only screen and (max-width: 1200px";
+$desktop_2: "max-width: 1200px";
+$media_tablet: "only screen and (max-width: 1024px)";
+$media_mobile: "only screen and (max-width: 767px)";
+$media_mobile_sm: "only screen and (max-width: 425px)";
+$media_mobile_xs: "only screen and (max-width: 375px)";
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    background-color: $primary-color;
+
+    & img {
+        max-height: 100px;
+        max-width: auto;
+    }
+
+    & button {
+        padding: 2rem !important;
+        border: none !important;
+    }
+
+    & .offcanvas-header {
+        margin-top: 2rem;
+    }
+
+    & .offcanvas-body {
+        padding-top: 1rem;
+    }
+
+    & li {
+        list-style-type: none;
+        margin-bottom: 1rem;
+
+        &.current_page_item > a {
+            color: $primary-color;
+        }
+    }
+
+    & a {
+        font-weight: 700;
+        color: black;
+        text-decoration: none;
+
+    }
+}
+
+.template-3-ctn {
+    width: 100%;
+    padding: 0 4rem;
+
+    @media #{ $media_tablet } {
+        padding: 0 2rem;
+    }
+}
+
+.navbar-container {
+    width: 1%;
+    padding: 0 4rem;
+    display: flex;
+    flex-direction: row;
+
+    & .logo {
+        flex-basis: 20%;
+        align-self: center;
+    }
+
+    & .menu-container {
+        flex-basis: 80%;
+        display: flex;
+        justify-content: right;
+    }
+
+    & .close {
+        background-color: #F8C9C9;
+        border-radius: 24px;
+        color: $primary-color;
+
+        &:hover {
+            cursor: 'pointer';
+        }
+    }
+
+    @media #{ $media_tablet } {
+        padding: 0 2rem;
+    }
+}
+
+// Banner 
+.banner_column {
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    & > * {
+        width: 100%;
+        flex-basis: 50%;
+
+        @media only screen and ( max-width: 1225px ) {
+            flex-basis: 100%;
+        }
+    }
+
+    & .image-banner {
+        width: 100%;
+    }
+
+    & .banner_col {
+        height: fit-content;
+        align-self: center;
+        display: flex;
+        padding: 4rem 4rem;
+        flex-direction: column;
+        justify-content: center;
+        color: $primary-color;
+
+        @include setBackgroundImage(
+            url('assets/images/Temp3_backG.png'), 
+            contain, 
+            4rem
+        );
+
+        & h1 {
+            width: 18ch;
+            font-weight: 600;
+            font-style: pxToRem( 105px );
+
+            @media #{ $media_mobile } {
+                width: 100%;
+            }
+        }
+
+        & p {
+            color: black;
+        }
+
+        // Login Button
+        & button {
+            border: 1px solid $primary-color;
+            background-color: transparent;
+            padding: 0.5rem 1.5rem;
+            color: $primary-color;
+
+            & a {
+                font-weight: 600;
+                text-decoration: none;
+                color: inherit;
+            }
+
+            &:hover {
+                background-color: $primary-color;
+                color: white;
+            }
+        }
+
+        @media #{ $media_mobile } {
+            padding: 1rem;
+        }
+    }
+
+    & .banner-col2 {
+        width: 100%;
+    }
+}
+
+#description {
+    margin: 4rem 0 2rem 0;
+
+    & h2 {
+        font-weight: 700;
+        color: #292929;
+        font-size: pxToRem( 48px );
+
+        @media #{ $media_mobile } {
+            font-size: pxToRem( 24px );
+        }
+    }
+
+    & p {
+        font-weight: 300;
+        color: black;
+        font-size: pxToRem( 15px );
+        width: 85%;
+        margin: auto;
+
+        @media #{ $media_mobile } {
+            width: 100%;
+        }
+    }
+
+    & .description_column {
+        padding: 4rem;
+    
+        @include setBackgroundImage(
+            url('assets/images/Temp3_backG.png'), 
+            contain, 
+            center
+        );
+    
+    }
+    
+    @media #{ $media_mobile } {
+        margin: 1rem;
+
+    }
+}
+
+#latest_events {
+    background-color: $primary-color;
+    width: 100%;
+    padding: 4rem 0;
+    color: white;
+
+    & .latest_events_container {
+        max-width: 80%;
+        margin: auto;
+        
+        @media only screen and ( max-width: 1225px ) {
+            max-width: 100%;
+        }
+    }
+
+    & .latest_events_column {
+        display: flex;
+        flex-direction: row;
+
+        @media #{ $media_mobile } {
+            flex-direction: column;
+        }
+    }
+
+    & .latest_events_col:first-of-type {
+        flex-basis: 30%;
+        padding: 2rem;
+        font-weight: 700;
+
+        @media #{ $media_tablet } {
+            flex-basis: 40%;
+        }
+
+        @media #{ $media_mobile } {
+            flex-basis: 100%;
+        }
+    }
+
+    & .latest_events_col:last-of-type {
+        flex-basis: 60%;
+        margin-left: auto;
+        text-align: right;
+
+
+        @media only screen and ( max-width: 1225px ) {
+            margin-right: 2rem;
+        }
+
+
+        @media #{ $media_mobile } {
+            flex-basis: 100%;
+            padding: 0 2rem;
+            text-align: left;
+        }
+    }
+
+    & h2 {
+        @include reusableH2();
+    }
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    opacity: 1;
+    border: 0;
+
+    &--red {
+        background-color: $primary-color;
+    }
+
+    @media #{ $media_mobile } {
+        margin-bottom: 2rem;
+    }
+}
+
+#fourth_section {
+    padding: 4rem;
+    width: 100%;
+    color: black;
+
+    & .fourth_section_column {
+        display: flex;
+        flex-wrap: wrap;
+        width: inherit;
+    }
+
+    & .fourth_section_col:first-of-type {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+
+        @media only screen and ( max-width: 1225px ) {
+            margin-right: 2rem;
+        }
+
+        @media #{ $media_tablet } {
+            flex-basis: 55%;
+        }
+
+        @media #{ $media_mobile } {
+            flex-basis: 100%;
+            text-align: left;
+        }
+    }
+
+    & .fourth_section_col:last-of-type {
+        flex-basis: 30%;
+        margin-left: auto;
+        display: flex;
+        justify-content: center;
+
+        @media #{ $media_tablet } {
+            flex-basis: 40%;
+        }
+
+        @media #{ $media_mobile } {
+            flex-basis: 100%;
+            text-align: left;
+        }
+    }
+
+    & img {
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+
+    & h2 {
+        @include reusableH2();
+    }
+
+    @media #{ $media_tablet } {
+        padding: 2rem;
+    }
+}
+
+footer {
+    background-color: #EDEDED;
+    padding: 2rem 0;
+
+    & ul {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        column-gap: 2rem;
+        margin: auto;
+        padding: 2rem 0;
+    }
+
+    & li {
+        display: inline-flex;
+        list-style-type: none;
+    }
+
+    & a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: pxToRem( 12px );
+        text-transform: uppercase;
+        color: black;
+    }
+}
