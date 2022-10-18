@@ -472,6 +472,10 @@ footer {
     & .fa{
         margin-right: 0.2rem;
     }
+
+    @media #{ $media_mobile } {
+        padding: 4rem 2rem;
+    }
 }
 
 // Search Page
@@ -567,10 +571,6 @@ footer {
             border-color: $primary-color;
             color: $primary-color;
         }
-    }
-
-    @media #{ $media_tablet } {
-        padding: 0;
     }
 
     @media #{ $media_mobile } {

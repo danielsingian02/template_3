@@ -408,6 +408,11 @@ footer a {
 .site-content-404 .fa {
   margin-right: 0.2rem;
 }
+@media only screen and (max-width: 767px) {
+  .site-content-404 {
+    padding: 4rem 2rem;
+  }
+}
 
 .site-content-search {
   color: black;
@@ -489,11 +494,6 @@ footer a {
 .container .media:hover {
   border-color: #C21919;
   color: #C21919;
-}
-@media only screen and (max-width: 1024px) {
-  .container {
-    padding: 0;
-  }
 }
 @media only screen and (max-width: 767px) {
   .container {
