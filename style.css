@@ -150,10 +150,19 @@ header a {
 @media only screen and (max-width: 767px) {
   .banner_column .banner_col {
     padding: 1rem;
+    background-image: url("assets/images/Temp3_backG.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: 1rem;
   }
 }
 .banner_column .banner-col2 {
   width: 100%;
+}
+@media only screen and (max-width: 1024px) {
+  .banner_column .banner_col {
+    margin: 4rem 0;
+  }
 }
 
 #description {
