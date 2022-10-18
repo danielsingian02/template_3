@@ -424,7 +424,7 @@ footer a {
 }
 @media only screen and (max-width: 1024px) {
   .site-content-search > .search-results {
-    padding: 2rem;
+    padding: 1rem;
   }
 }
 .site-content-search article {
