@@ -21,11 +21,14 @@
 					$custom_logo_id = get_theme_mod( 'custom_logo' );
 					$logo           = wp_get_attachment_image_src( $custom_logo_id, 'full' );
 
-					if (  has_custom_logo() ) {
-						echo '<img class="header_logo" src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
-					} else {
+					if ( has_custom_logo() ) {
+						echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '">';
+					} else if ( strlen( $logo[0] ) != 0 ) {
 						echo '<img src="' . get_bloginfo( 'template_directory' ) . '/assets/images/Temp3_Logo.png' . '" alt="' . get_bloginfo( 'name' ) . '">';
+					} else {
+						echo '<h1>' . get_bloginfo( 'name' ) . '</h1>';
 					}
+
 					?>
 				</a>
 			</div>

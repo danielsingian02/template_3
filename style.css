@@ -378,6 +378,10 @@ footer a {
   text-transform: uppercase;
   color: black;
 }
+footer img {
+  width: 100px;
+  height: auto;
+}
 
 .site-content-404 {
   display: flex;

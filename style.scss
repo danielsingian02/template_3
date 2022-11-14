@@ -434,6 +434,11 @@ footer {
         text-transform: uppercase;
         color: black;
     }
+
+    & img {
+        width: 100px;
+        height: auto;
+    }
 }
 
 // 404 Page
